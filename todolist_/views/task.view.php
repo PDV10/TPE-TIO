@@ -15,5 +15,8 @@ class TaskView {
 
         $this->smarty->display('templates/taskList.tpl');
     }
+   function showAbout(){
 
+ $this->smarty->display('templates/about.tpl');
+   }
 }

@@ -44,4 +44,8 @@ class TaskController {
         header("Location: " . BASE_URL);
     }
 
+    function showAbout(){
+    $this->view->showAbout();
+    }
+
 }
