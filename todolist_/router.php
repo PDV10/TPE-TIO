@@ -45,6 +45,10 @@ switch ($params[0]) {
         $taskController = new TaskController();
         $taskController->completeTask($params[1]);
         break;
+    case 'about':
+    $taskController = new TaskController();
+    $taskController->showAbout();
+        break;
     default:
         echo '404 - Página no encontrada';
         break;
