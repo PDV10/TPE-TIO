@@ -14,7 +14,7 @@
                     d-flex
                     {if $task->finalizada} finalizada {/if}
                     ">
-                        {$task->titulo} | {$task->descripcion|truncate:30}
+                        {$task->titulo} | {$task->descripcion|upper}
                         <div class="acciones ms-auto">
                             <a class="btn btn-sm btn-danger" href="borrar/{$task->id}">Borrar</a>
                             {if !$task->finalizada}
