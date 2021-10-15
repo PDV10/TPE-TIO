@@ -1,6 +1,6 @@
 {include 'header.tpl'}
 
-<div class="mt-5 w-25 mx-auto">
+<div class="mt-5 w-25 mx-auto shadow-lg p-3 mb-5 bg-body rounded">
     <form method="POST" action="verify">
         <div class="form-group">
             <label for="email">Correo</label>
