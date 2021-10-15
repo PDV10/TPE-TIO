@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2021 a las 01:08:52
+-- Tiempo de generación: 16-10-2021 a las 01:49:58
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -40,10 +40,9 @@ CREATE TABLE `task` (
 --
 
 INSERT INTO `task` (`id`, `titulo`, `descripcion`, `prioridad`, `finalizada`) VALUES
-(2, 'Estudiar TMC', 'bla bla', 2, 0),
-(3, 'test 3', 'test 3 ', 1, 0),
-(4, 'hola', 'decrip', 5, 0),
-(5, 'tarea desde el form', 'es', 4, 1);
+(1, 'Cursar WEB2', 'Próximo martes y jueves cursar web2 de 17 a 20hs.', 5, 0),
+(2, 'Estudiar TMC', 'Repasar probabilidad y conteo para rendir el próximo viernes.', 2, 0),
+(3, 'Entregar TP TIO', 'Editar y presentar trabajo práctico de TIO para el sábado.', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -88,7 +87,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `task`
 --
 ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
