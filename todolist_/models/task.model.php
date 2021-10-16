@@ -47,5 +47,16 @@ class TaskModel {
         $query = $this->db->prepare('UPDATE task SET finalizada=1 WHERE id=?');
         $query->execute([$id]);
     }
+
+    function getTaskId($id){
+        $query = $this->db->prepare('SELECT * FROM task WHERE id = ?');
+        $query->execute([$id]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
+
+    function modificar($titulo,$descripcion,$prioridad,$id){
+        $query = $this->db->prepare(' UPDATE task SET titulo = ?, descripcion = ?, prioridad = ? WHERE task.id = ?');
+        $query->execute([$titulo,$descripcion,$prioridad,$id]);
+        return $query->fetch(PDO::FETCH_OBJ); }
 	
 }

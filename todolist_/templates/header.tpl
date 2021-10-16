@@ -24,6 +24,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="">Home</a>
                             <a class="nav-link active" aria-current="page" href="about">About</a>
+                            <a class="nav-link active" aria-current="page" href="contacto">Contacto</a>
                         </li>
                         
                         <li class="nav-item ms-auto">
