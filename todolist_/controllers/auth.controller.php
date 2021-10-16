@@ -3,36 +3,32 @@ require_once 'models/user.model.php';
 require_once 'views/auth.view.php';
 require_once 'helpers/auth.helper.php';
 
-class AuthController {
+class AuthController
+{
     private $model;
     private $view;
     private $authHelper;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->model = new UserModel();
         $this->view = new AuthView();
         $this->authHelper = new AuthHelper();
     }
 
-    public function showLogin() {
-        $this->view->showFormLogin();
+    public function showLogin()
+    {
+        $this->view->showFormLogin();  //Formulario de logueo.
     }
 
-    /**
-     * Verifica si los datos del user son correctos
-     */
-    public function login() {
-        if (!empty($_POST['email']) && !empty($_POST['password'])) {
+    public function login()
+    {  //Verifica el usuario.
+        if (!empty($_POST['email']) && !empty($_POST['password'])) {   //Verifica si los campos estan vacios.
             $email = $_POST['email'];
             $password = $_POST['password'];
-     
-            // Obtengo el usuario de la base de datos
-            $user = $this->model->getUser($email);
-     
-            // Si el usuario existe y las contraseñas coinciden
-            if ($user && password_verify($password, $user->password)) {
-                 // armo la sesion del usuario
-                $this->authHelper->login($user);
+            $user = $this->model->getUser($email);   // Obtengo el usuario de la base de datos     
+            if ($user && password_verify($password, $user->password)) { //Verifica si el usuario existe y la constaseña coincide.
+                $this->authHelper->login($user);  //Se arma el usuario.
                 header("Location: " . BASE_URL);
             } else {
                 $this->view->showFormLogin("Usuario o contraseña inválida");
@@ -40,7 +36,8 @@ class AuthController {
         }
     }
 
-    public function logout() {
+    public function logout()
+    {
         $this->authHelper->logout();
     }
 }
