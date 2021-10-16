@@ -17,7 +17,7 @@
                         {$task->titulo} | {$task->descripcion|upper}
                         <div class="acciones ms-auto">
                             <a class="btn btn-sm btn-danger" href="borrar/{$task->id}">Borrar</a>
-                            <a class="btn btn-sm btn-danger" href="showModificar/{$task->id}">Modificar</a>
+                            <a class="btn btn-sm btn-warning" href="showModificar/{$task->id}">Modificar</a>
                             {if !$task->finalizada}
                                 <a class="btn btn-sm btn-success" href="completar/{$task->id}">Done</a>
                             {/if}
