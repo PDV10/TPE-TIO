@@ -65,4 +65,7 @@ class TaskController
     function showAbout(){
         $this->view->showAbout();
     }
+    function showContacto(){
+        $this->view->showContacto();
+    }
 }

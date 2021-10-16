@@ -3,14 +3,13 @@ require_once 'controllers/task.controller.php';
 require_once 'controllers/auth.controller.php';
 
 // defino la base url para la construccion de links con urls semánticas
-define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
-define('LOGIN', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/login');
+define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
+define('LOGIN', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/login');
 
 // leo accion y params
-if (!empty($_GET['action'])){
+if (!empty($_GET['action'])) {
     $action = $_GET['action'];
-}
-else {
+} else {
     $action = 'listar';
 }
 $params = explode('/', $action);
@@ -21,11 +20,11 @@ switch ($params[0]) {
         $authController = new AuthController();
         $authController->showLogin();
         break;
-    case 'verify': 
+    case 'verify':
         $authController = new AuthController();
         $authController->login();
         break;
-    case 'logout': 
+    case 'logout':
         $authController = new AuthController();
         $authController->logout();
         break;
@@ -46,8 +45,12 @@ switch ($params[0]) {
         $taskController->completeTask($params[1]);
         break;
     case 'about':
-    $taskController = new TaskController();
-    $taskController->showAbout();
+        $taskController = new TaskController();
+        $taskController->showAbout();
+        break;
+    case 'contacto':
+        $taskController = new TaskController();
+        $taskController->showContacto();
         break;
     case 'showModificar':
         $taskController = new TaskController();
