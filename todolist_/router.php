@@ -49,6 +49,13 @@ switch ($params[0]) {
     $taskController = new TaskController();
     $taskController->showAbout();
         break;
+    case 'showModificar':
+        $taskController = new TaskController();
+        $taskController->showModificar($params[1]);
+        break;
+    case 'modificar':
+        $taskController = new TaskController();
+        $taskController->modificar();
     default:
         echo '404 - Página no encontrada';
         break;
